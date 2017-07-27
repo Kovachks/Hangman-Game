@@ -24,11 +24,11 @@ var guessesLeft = 12;
 //word bank
 var wordBank = ["hornets", "cavaliers", "celtics", "lakers", "rockets", "thunder"];
 
-//computer guess container
-var computerWord = undefined;
+// computer selection from aray
+var computerSelection = undefined;
 
-//computer string of individual letters
-var computerString = [];
+//container for split guess
+var computerSplit = undefined;
 
 var userGuesses = [];
 
@@ -39,13 +39,9 @@ function computerGuessGen() {
 	return Math.floor(Math.random() * wordBank.length);
 }
 
-function () {
-	return 
-}
+//Storing randomly generated computer word as variable
+computerSelection = wordBank[computerGuessGen()];
 
-//Storing randomly generated computer word as variable;
-computerWord = wordBank[computerGuessGen()];
-
-//Splits computerword into individual letters
-computerString = computerword.Split(" ");
-console.log(computerString);
+//Splits word into individual letters
+computerSplit = computerSelection.split("");
+console.log(computerSplit);
