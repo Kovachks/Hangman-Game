@@ -1,6 +1,6 @@
 /*
 Generate a word to be used in the game - Done
-display computer generated word
+display the length of the word with hidden letters
 create onkeyup event and store value for user input
 check user guess against array of letters
 if the guess was correct display letters
@@ -32,6 +32,8 @@ var computerSplit = undefined;
 
 var userGuesses = [];
 
+var computerLetter = $("#computerLetter");
+
 //functions
 
 //Generating computers guess.
@@ -45,3 +47,15 @@ computerSelection = wordBank[computerGuessGen()];
 //Splits word into individual letters
 computerSplit = computerSelection.split("");
 console.log(computerSplit);
+
+//Creating letter container for computer generated word
+$("#computerWord").html("Test");
+for (var i = 0; i < computerSplit.length; i += 1) {
+	var newLetterDiv = $("<div>" + computerSplit[i] + "</div>");
+	computerLetter.append(newLetterDiv);
+}
+console.log(newLetterDiv);
+
+//for each letter create a letter container.  add text html to the letter container.
+//after letters are completely filled out add that container to the above nested container.
+//for underscores divs with a height of 5 pixels and width is the same as the letter
