@@ -1,2 +1,12 @@
+.container{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
 
-
+#computerLetter {
+	position: 
+}
