@@ -155,8 +155,9 @@ document.onkeyup = function(event) {
 			guessesLeft = 12;
 			letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 			userGuesses = [];
-			$(".container").remove();
-			
+			for (var i = 0; i < computerAnswer.length; i += 1) {
+				$(".container" + i).remove();
+			}
 			//Wet code to choose a new word on loss
 			function computerGuessGen() {
 				return Math.floor(Math.random() * wordBank.length);
@@ -168,7 +169,7 @@ document.onkeyup = function(event) {
 			for (var i = 0; i < computerSplit.length; i += 1) {
 					var newLetterDiv = $("<div></div>");
 					newLetterDiv.addClass("container" + i);
-						computerLetter.append(newLetterDiv);}
+					computerLetter.append(newLetterDiv);}
 
 		}
 	//if no letter was selected alert the user to select a letter
