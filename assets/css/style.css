@@ -1,4 +1,4 @@
-.container{
+.container0{
 	position: relative;
 	width: 2%;
 	float: left;
@@ -6,7 +6,85 @@
 	padding: 2%;
 	margin: 2%;
 }
-
+.container1{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container2{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container3{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container4{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container5{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container6{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container7{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container8{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
+.container9{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}.container{
+	position: relative;
+	width: 2%;
+	float: left;
+	border-bottom: solid 2px black;
+	padding: 2%;
+	margin: 2%;
+}
 #computerLetter {
 	position: 
 }

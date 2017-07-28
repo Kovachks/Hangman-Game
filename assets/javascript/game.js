@@ -8,7 +8,8 @@ if the guess was correct display letters - incomplete
 if guess was incorrect drop guesses remaining by 1 - Done
 if word is complete log win - Done
 if guess remaining = 0 log loss - Done
-reset after either of above 2 conditions - in progress.  Need to reset created divs
+reset after either of above 2 conditions - Done
+
 */
 
 //Variables
@@ -33,6 +34,9 @@ var computerSelection = undefined;
 //container for split guess
 var computerSplit = undefined;
 
+//Holds full computer answer
+var computerAnswer = undefined;
+
 //array for holding user guesses
 var userGuesses = [];
 
@@ -50,8 +54,7 @@ computerSelection = wordBank[computerGuessGen()];
 
 //Splits word into individual letters
 computerSplit = computerSelection.split("");
-computerContainer = computerSelection.split("");
-console.log(computerContainer);
+computerAnswer = computerSelection.split("");
 console.log(computerSplit);
 
 //Creating letter container for computer generated word
@@ -61,10 +64,10 @@ $("#computerWord").html("");
 for (var i = 0; i < computerSplit.length; i += 1) {
 
 	//creating div containers for letters in computer guess
-	var newLetterDiv = $("<div></div>");
+	var newLetterDiv = $("<div`></div>");
 	
 	//Adding container class to newly created divs
-	newLetterDiv.addClass("container");
+	newLetterDiv.addClass("container" + i);
 
 	//adding divs to parent container
 	computerLetter.append(newLetterDiv);
@@ -82,10 +85,16 @@ document.onkeyup = function(event) {
 		//correct selection
 		if (computerSplit.indexOf(userGuess) > -1) {
 
-			//Removing correct selection from computer word array - looping for mutiple letters
+			//
 			for (var i = 0; i < computerSplit.length; i += 1) {
 				if (computerSplit.indexOf(userGuess) > -1) {
+				
+                //to add letter to screen after correct quess
+                $(".container" + computerAnswer.indexOf(userGuess)).html(userGuess);
+
+                //Removing correct selection from computer word array - looping for duplicate letters in array
 				computerSplit.splice(computerSplit.indexOf(userGuess), 1);
+				
 				//removing selected letter from possible guesses
 				letters.splice(letters.indexOf(userGuess), 1);
 				}	else {
@@ -100,7 +109,9 @@ document.onkeyup = function(event) {
 				guessesLeft = 12;
 				letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 				userGuesses = [];
-				$(".container").remove();
+				for (var i = 0; i < computerAnswer.length; i += 1) {
+				$(".container" + i).remove();
+			}
 				
 				//Wet code to choose a new word on loss
 				function computerGuessGen() {
