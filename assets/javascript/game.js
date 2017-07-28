@@ -8,7 +8,7 @@ if the guess was correct display letters - incomplete
 if guess was incorrect drop guesses remaining by 1 - Done
 if word is complete log win - Done
 if guess remaining = 0 log loss - Done
-reset after either of above 2 conditions - Done
+reset after either of above 2 conditions - in progress.  Need to reset created divs
 */
 
 //Variables
@@ -50,6 +50,8 @@ computerSelection = wordBank[computerGuessGen()];
 
 //Splits word into individual letters
 computerSplit = computerSelection.split("");
+computerContainer = computerSelection.split("");
+console.log(computerContainer);
 console.log(computerSplit);
 
 //Creating letter container for computer generated word
@@ -98,6 +100,7 @@ document.onkeyup = function(event) {
 				guessesLeft = 12;
 				letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 				userGuesses = [];
+				$(".container").remove();
 				
 				//Wet code to choose a new word on loss
 				function computerGuessGen() {
@@ -136,6 +139,7 @@ document.onkeyup = function(event) {
 			guessesLeft = 12;
 			letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 			userGuesses = [];
+			$(".container").remove();
 			
 			//Wet code to choose a new word on loss
 			function computerGuessGen() {
