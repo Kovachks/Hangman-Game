@@ -6,7 +6,7 @@ check user guess against array of letters.  Display if a letter was not selected
 check user guess against array of letters in computer guess - Done
 if the guess was correct display letters - incomplete
 if guess was incorrect drop guesses remaining by 1 - Done
-if word is complete log win - In progress (can't get split method to loop through multiple letters in word)
+if word is complete log win - Done
 if guess remaining = 0 log loss - Done
 reset after either of above 2 conditions - Done
 */
@@ -81,9 +81,14 @@ document.onkeyup = function(event) {
 		if (computerSplit.indexOf(userGuess) > -1) {
 
 			//Removing correct selection from computer word array - looping for mutiple letters
-			computerSplit.splice(computerSplit.indexOf(userGuess), 1);
-			//removing selected letter from possible guesses
-			letters.splice(letters.indexOf(userGuess), 1);
+			for (var i = 0; i < computerSplit.length; i += 1) {
+				if (computerSplit.indexOf(userGuess) > -1) {
+				computerSplit.splice(computerSplit.indexOf(userGuess), 1);
+				//removing selected letter from possible guesses
+				letters.splice(letters.indexOf(userGuess), 1);
+				}	else {
+			}
+		}
 
 			//Checking to see if user won game
 			if (computerSplit.length === 0) {
