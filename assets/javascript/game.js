@@ -86,11 +86,14 @@ document.onkeyup = function(event) {
 		if (computerSplit.indexOf(userGuess) > -1) {
 
 			//
-			for (var i = 0; i < computerSplit.length; i += 1) {
+			for (var i = 0; i < computerAnswer.length; i += 1) {
 				if (computerSplit.indexOf(userGuess) > -1) {
 				
                 //to add letter to screen after correct quess
                 $(".container" + computerAnswer.indexOf(userGuess)).html(userGuess);
+
+            	//removing original in guess in case of duplicates
+            	computerAnswer[computerAnswer.indexOf(userGuess)] = "_";
 
                 //Removing correct selection from computer word array - looping for duplicate letters in array
 				computerSplit.splice(computerSplit.indexOf(userGuess), 1);
@@ -104,6 +107,7 @@ document.onkeyup = function(event) {
 			//Checking to see if user won game
 			if (computerSplit.length === 0) {
 				alert("You won!");
+				wins = wins + 1;
 
 				//reseting game
 				guessesLeft = 12;
@@ -119,10 +123,11 @@ document.onkeyup = function(event) {
 				}
 				computerSelection = wordBank[computerGuessGen()];
 				computerSplit = computerSelection.split("");
+				computerAnswer = computerSelection.split("");
 				$("#computerWord").html("");
 				for (var i = 0; i < computerSplit.length; i += 1) {
 						var newLetterDiv = $("<div></div>");
-						newLetterDiv.addClass("container");
+						newLetterDiv.addClass("container" + i);
 						computerLetter.append(newLetterDiv);
 				}
 			} else {
@@ -158,10 +163,11 @@ document.onkeyup = function(event) {
 			}
 			computerSelection = wordBank[computerGuessGen()];
 			computerSplit = computerSelection.split("");
+			computerAnswer = computerSelection.split("");
 			$("#computerWord").html("");
 			for (var i = 0; i < computerSplit.length; i += 1) {
 					var newLetterDiv = $("<div></div>");
-					newLetterDiv.addClass("container");
+					newLetterDiv.addClass("container" + i);
 						computerLetter.append(newLetterDiv);}
 
 		}
@@ -171,7 +177,9 @@ document.onkeyup = function(event) {
 	}
 
 	var html = "<p>Guesses Left: " + guessesLeft + "</p>" +
-			   "<p>User Guesses: " + userGuesses + "</p>";
+			   "<p>User Guesses: " + userGuesses + "</p>" +
+			   "<p>Wins: " + wins + "</p>" + 
+			   "<p>Losses : " + losses + "</p>";
 
 	document.querySelector("#computerWord").innerHTML = html;
 }
