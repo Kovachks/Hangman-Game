@@ -24,7 +24,7 @@ var losses = 0;
 var guessesLeft = 12;
 
 //word bank
-var wordBank = ["hornets", "cavaliers", "celtics", "lakers", "rockets", "thunder", "pacers", "bulls", "magic", "jazz", "clippers", "spurs", "raptors"];
+var wordBank = ["hawks", "celtics", "nets", "hornets", "bulls", "cavaliers", "mavericks", "nuggets", "pistons", "warriors", "rockets", "pacers", "clippers", "lakers", "grizzlies", "heat", "bucks", "timberwolves", "pelicans", "knicks", "thunder", "magic", "suns", "kings", "spurs", "raptors", "jazz", "wizards"];
 
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
