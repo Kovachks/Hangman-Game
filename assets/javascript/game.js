@@ -4,7 +4,7 @@ display the length of the word with hidden letters - Done
 create onkeyup event and store value for user input - Done
 check user guess against array of letters.  Display if a letter was not selected - Done
 check user guess against array of letters in computer guess - Done
-if the guess was correct display letters - incomplete
+if the guess was correct display letters - done
 if guess was incorrect drop guesses remaining by 1 - Done
 if word is complete log win - Done
 if guess remaining = 0 log loss - Done
